@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+	<link rel="stylesheet" href="{% static 'myapp/css/wave.css' %}">
+{% endblock %}
+
+{% block body %}
+
+
+    <a href="/othello/6"><img src="{% static 'myapp/images/Othello.jpg' %}" alt="オセロの画像" width=100px>オセロ</a>
+    <br>
+
+    <a href="/circlecross/3"><img src="{% static 'myapp/images/Circlecross.jpg' %}" alt="まるばつゲームの画像" width=100px>まるばつゲーム</a>
+    <br>
+
+    <a href="/snake"><img src="{% static 'myapp/images/Snake.jpg' %}" alt="Snakeの画像" width=100px>SnakeGame</a>
+    <br>
+    
+    <a href="/sound"><img src="{% static 'myapp/images/Sound.jpg' %}" alt="Soundの画像" width=100px>Sound(試作段階)</a>
+    <br>
+
+    <a href="/tetris"><img src="{% static 'myapp/images/Tetris.jpg' %}" alt="Tetrisの画像" width=100px>Tetris(試作段階)</a>
+
+<div class="wave">
+  <canvas id="waveCanvas"></canvas>
+  </div>
+
+<script src="{% static 'myapp/js/wave.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'play_base.html' %}
+{% load static %}
+
+{% block head %}
+	<link rel="stylesheet" href="{% static 'myapp/css/circlecross_style.css' %}">
+{% endblock %}
+
+{% block body %}
+  <h1 id="turn"></h1>
+  <div id="btn">
+    <p id="first">first</p>
+    <p id="second">second</p>
+  </div>
+  <div id="stage" class="stage"></div>
+  <div id="square-template" class="square">
+      <div class="stone"></div>
+  </div>
+  <div id="SQ" class="not_display">{{ SQ }}</div>
+    <a href="/circlecross/3" role="button">3*3</a>
+    <a href="/circlecross/4" role="button">4*4</a>
+    
+  <script src="{% static 'myapp/js/circlecross_main.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'play_base.html' %}
+{% load static %}
+
+
+
+{% block body %}
+<canvas id="canvasId"></canvas>
+  <button onclick="play()">play</button>
+  <input id="answer">
+  <br>
+  <button onclick="check()">Check</button>
+  <br>
+  <p>playで音を聞く</p>
+  <br>
+  <p>何Hzかを入力</p>
+  <br>
+  <p>checkで答え合わせ</p>
+  
+  <script src="{% static 'myapp/js/sound_main.js' %}"></script>
+{% endblock %}

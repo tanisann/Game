@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="h1">Login</div>
+
+<div>
+  <br>
+  <form method="POST">
+  {% csrf_token %}
+  {{ form.non_field_errors }}
+  {% for field in form %}
+  {{ field.label }}
+  {{ field }}
+  {{ field.errors }}
+  </br>
+    {% endfor %}
+    <div>
+      <button type="submit" class="btn">Login</button>
+      <a href="{% url 'myapp:index' %}" class="btn">Back</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

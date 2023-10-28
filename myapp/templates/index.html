@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block head %}
+	<link rel="stylesheet" href="{% static 'css/index_style.css' %}">
+{% endblock %}
+
+
+{% block body %}
+{% if user.is_authenticated %}
+<h2 class="text">
+<span>よ</span>
+<span>う</span>
+<span>こ</span>
+<span>そ</span>
+</h2>
+<h1>{{ user.name }}さん</h1>
+<a href="{% url 'myapp:games' %}" class="btn">Games</a>
+<a href="{% url 'myapp:logout' %}" class="btn">Logout</a>
+{% else %}
+<a href="{% url 'myapp:signup' %}" class="btn">Signup</a>
+<a href="{% url 'myapp:login' %}" class="btn">Login</a>
+<a href="{% url 'myapp:games' %}" class="btn">Games</a>
+{% endif %}
+
+
+<div class="ball"></div><div class="ball2"></div>
+
+
+{% endblock %}

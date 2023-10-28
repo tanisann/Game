@@ -1,0 +1,29 @@
+{% extends 'play_base.html' %}
+{% load static %}
+
+{% block head %}
+	<link rel="stylesheet" href="{% static 'myapp/css/othello_style.css' %}">
+{% endblock %}
+
+{% block body %}
+    <h1><span id="current-turn">now turn is black</span></h1>
+    
+    <div id="stage" class="stage"></div>
+    <div id="square-template" class="square">
+        <div class="stone"></div>
+    </div>
+    <div id="SQ" class="not_display">{{ SQ }}</div>
+    <input id="name" class="not_display" value="{{ user.name }}">
+    <input id="csrf_fo" class="not_display" value="{{ csrf_token }}" name='csrfmiddlewaretoken'>
+   <script src="{% static 'myapp/js/othello_main.js' %}"></script>
+
+    
+    <a href="/othello/4" role="button">4*4</a>
+    <a href="/othello/6" role="button">6*6</a>
+    <a href="/othello/8" role="button">8*8</a>
+    <br>
+    
+<p>ある程度強いのがお求めなら、<a href="http://tanisann.github.io/othello">こちら</a></p>
+
+
+{% endblock %}

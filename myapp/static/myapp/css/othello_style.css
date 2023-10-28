@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+
+.stage{
+  display: flex;
+  flex-wrap: wrap;
+  width: 400px;
+  height: 400px;
+  background-color: #008000;
+}
+
+.stage[data-SQ="4"]{
+  width: 200px;
+  height: 200px;
+}
+
+.stage[data-SQ="6"]{
+  width: 300px;
+  height: 300px;
+}
+    
+.stage[data-SQ="8"]{
+  width: 400px;
+  height: 400px;
+}
+
+.square{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border:solid black;
+  border-width: 0 1px 1px 0;
+  cursor:pointer;;
+  background-color: #008000;
+}
+
+.square[data-canput="0"]{
+    background-color: #008000;
+}
+
+.square[data-canput="1"]{
+    background-color: yellow;
+}
+
+
+.stone{
+  position: absolute;
+  top: 2px;
+  bottom: 0;
+  left: 2px;
+  width: 42px;
+  height: 42px;
+  border-radius: 21px;
+  background-color: black;
+}
+
+.stone[data-state="0"]{
+    display: none;
+}
+
+.stone[data-state="1"]{
+    background-color: black;
+}
+
+.stone[data-state="2"]{
+    background-color: white;
+}
+
+#square-template{
+  display:none;
+}
+
+.not_display{
+  display:none;
+}
+
+

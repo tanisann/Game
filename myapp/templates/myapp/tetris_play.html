@@ -1,0 +1,16 @@
+{% extends 'play_base.html' %}
+{% load static %}
+
+{% block body %}
+  <p id="score"></p>  
+  <canvas id="canvasId"></canvas>
+  <canvas id="canvasId2"></canvas>
+  <br>
+  <button style="padding: 100px" onclick="left()">左</button>
+  <button style="padding: 100px" onclick="right()">右</button>
+    <button style="padding: 100px" onclick="routatebtn()">回転</button>
+
+
+  <script src="{% static 'myapp/js/tetris_main.js' %}"></script>
+  
+{% endblock %}

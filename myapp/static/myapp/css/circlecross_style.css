@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+
+.stage{
+  display: flex;
+  flex-wrap: wrap;
+  width: 300px;
+  height: 300px;
+  background-color: white;
+}
+
+
+.stage[data-SQ="3"]{
+  width: 300px;
+  height: 300px;
+}
+
+.stage[data-SQ="4"]{
+  width: 400px;
+  height: 400px;
+}
+
+.stage[data-SQ="5"]{
+  width: 500px;
+  height: 500px;
+}
+
+
+.square{
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border:solid black;
+  border-width: 1px 1px 1px 1px;
+  cursor:pointer;;
+  background-color: white;
+}
+
+#square-template{
+  display:none;
+}
+
+.stone{
+  position: absolute;
+  top: 3px;
+  bottom: 0;
+  left: 3px;
+  width: 84px;
+  height: 84px;
+  border-radius: 40px;
+  background-color: black;
+}
+
+.stone[data-state="0"]{
+    display: none;
+}
+
+.stone[data-state="1"]{
+    background-color: red;
+}
+
+.stone[data-state="-1"]{
+    background-color: blue;
+}
+
+#btn{
+  position:relative;
+  margin-bottom:10px;
+}
+
+.hide{
+  display:none;
+}
+
+#return{
+  text-align:center;
+  line-height:88px;
+  font-weight:bold;
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  margin:0;
+  bakground:white;
+}
+
+#first, #second{
+  padding:10px;
+  margin:auto;
+  cursor:pointer;
+}
+
+.not_display{
+  display:none;
+}

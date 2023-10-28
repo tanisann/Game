@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=ede">
+      <meta name="viewpotr" cotent="width=device-width, initial-scale=1.0">
+     {% block head %}{% endblock %}
+</head>
+<body>
+
+    {% block body %}{% endblock %}
+    <a href="/games" type="btn" on_click="comment_submit">戻る</a>
+    <br>
+    {% for comment in comment_list %}
+    {{comment.name}} {{ comment.body }} {{ comment.created_time }}
+    <br>
+    {% endfor %}
+
+{% if user.is_authenticated %}
+
+    <textarea  id="body"rows="5" cols="40"> コメント</textarea>
+    <input type="button" name='comment' onclick="comment_submit()" value="投稿">
+{% endif %}
+
+<script>
+
+function mes(event){
+  comment_submit()
+  event.returnValue()
+}
+window.onbeforeunload =mes ;
+
+function comment_submit(){
+  let form = document.createElement('form');
+  form.method = "POST";
+  let input_container = document.createElement('input');
+  input_container.type = 'hidden';
+  input_container.name = 'name';
+  input_container.value = '{{ user.name }}';
+  
+  let body_in =document.getElementById('body');
+  body_in.name = "body";
+  
+  let csrf_fo =document.createElement('input');
+  csrf_fo.type = 'hidden';
+  csrf_fo.name = 'csrfmiddlewaretoken';
+  csrf_fo.value = '{{ csrf_token }}';
+
+  form.appendChild(csrf_fo);
+  form.appendChild(input_container);
+  form.appendChild(body_in);
+
+  document.body.appendChild(form);
+  form.submit()
+}
+</script>
+
+</body>
+</html>

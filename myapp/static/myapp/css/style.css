@@ -1,0 +1,24 @@
+@charset "utf-8";
+
+body{
+  width:100%;
+  height:100vh;
+  background:linear-gradient(45deg,#00FFD7,#0046FF,#2EAE83);
+  background-size:200% 200%;
+  animation: bggradient 20s ease infinite;
+}
+
+@keyframes bggradient{
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
+}
+{% block head %}
+	<link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+{% endblock %}
